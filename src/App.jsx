@@ -20,7 +20,7 @@ function App() {
         </div>
       </header>
       <div className="wave-container">
-        <img className="wave" width="100%" src="/wave.svg" alt="" />
+        <img className="wave" width="100%" src="/wave_header-info.svg" alt="" />
       </div>
       <section className="desc">
         <div className="desc_info-container">
@@ -54,6 +54,14 @@ function App() {
             </p>
           </div>
         </div>
+      </section>
+      <section className="techs">
+      <div className="wave_tech-container">
+        <img className="wave" width="100%" src="/wave_info-tech_up.svg" alt="" />
+      </div>
+        <h1>
+          holaaaaaaa
+        </h1>
       </section>
     </body>
   );
