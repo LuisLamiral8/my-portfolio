@@ -1,0 +1,39 @@
+.item {
+  /* height: 40rem; */
+  /* width: 50px; */
+  min-width: 50rem;
+  margin: 0 auto;
+  padding: 2px;
+}
+.item img {
+  height: 200px;
+  width: 200px;
+  pointer-events: none;
+  animation: float 6s ease-in-out infinite;
+}
+.slider {
+  display: flex;
+  cursor: grab;
+  /* width: 20%; */
+}
+.slider-container {
+  margin: 0 auto;
+  width: 100%;
+  margin: 0 auto;
+  overflow-x: hidden;
+}
+
+@keyframes float {
+  0% {
+    transform: translatey(0px);
+  }
+  25% {
+    transform: translatey(20px);
+  }
+  75% {
+    transform: translatey(-20px);
+  }
+  100% {
+    transform: translatey(0px);
+  }
+}
