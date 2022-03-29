@@ -10,7 +10,8 @@ function App() {
   // }, []);
   return (
     <body className="body">
-      <header className="header">
+            <Indicator />
+      <header id="header" className="header">
         <Navbar />
         <div className="header-container">
           <div className="header_svg">
@@ -27,7 +28,23 @@ function App() {
           </div>
         </div>
       </header>
-      <Indicator />
+      <section id="about-me" className="about-me">
+        <div className="aboutme-svg">
+          <img src="/illustrations/aboutme.svg" alt="" />
+        </div>
+        <div className="aboutme-text">
+          <p>
+            I live in Argentina, Buenos Aires. <br/>I’m web developer since 2018.<br/> I
+            have a great handle on the development and design of websites with
+            recent technologies.<br/> I have worked on different Crypto pages, and
+            have made various designs for clients, such as businesses, companies
+            or NFTS pages.
+          </p>
+        </div>
+      </section>
+      <section id="skills" className="skills">
+        <h1>buenas tardes!</h1>
+      </section>
     </body>
   );
 }

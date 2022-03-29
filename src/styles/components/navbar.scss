@@ -7,6 +7,12 @@ $texts: #FFE9F3;
     height: 75px;
     background-color: $background;
     z-index: 50;
+    position: sticky;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    transition: all 250ms;
     .nav_ul{
         height: 100%;
         display: flex;
@@ -47,12 +53,17 @@ $texts: #FFE9F3;
             height: 100%;
             align-items: center;
             button{
+                a{
+                    font-family: "Mukta", sans-serif;
+                    text-decoration: none;
+                    color: white;
+
+                }
                 width: 140px;
                 height: 40px;
                 background-color: $button-2;
                 border: none;
                 border-radius: 25px;
-                color: white;
                 font-weight: 900;
                 cursor: pointer;
                 transition: all 250ms;
