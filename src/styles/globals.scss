@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Mukta:wght@200;300;400;500;600;700;800&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Mukta:wght@200;300;400;500;600;700;800&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap");
 $button-1: #0496ff;
 $button-2: #6e54ac;
 $background: #282627;
@@ -45,7 +45,7 @@ html {
         // background-color: red;
         h1 {
           font-size: 70px;
-          text-align: left; 
+          text-align: left;
         }
         h2 {
           margin: 0;
@@ -54,29 +54,29 @@ html {
       }
     }
   }
-  .about-me{
+  .about-me {
     width: 100%;
     height: 100vh;
     // background-color: gray;
     display: flex;
     justify-content: center;
     align-items: center;
-    .aboutme-svg{
+    .aboutme-svg {
       margin-right: 115px;
-      animation: float 10s infinite;
-      img{
+      animation: float 8s infinite;
+      img {
         width: 450px;
         transition: all 1500ms;
-        &:hover{
+        &:hover {
           transform: rotate(360deg);
         }
       }
     }
-    .aboutme-text{
+    .aboutme-text {
       max-width: 450px;
       height: auto;
       // background-color: darkviolet;
-      p{
+      p {
         color: $texts;
         font-family: Montserrat, sans-serif;
         font-weight: 300;
@@ -85,9 +85,95 @@ html {
       }
     }
   }
-  .skills{
+  .skills {
     width: 100%;
     height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    .skills_title {
+      width: 80%;
+      font-family: Mukta, sans-serif;
+      font-weight: 800;
+      color: $texts;
+      font-size: 2.5em;
+      margin: 15px auto;
+    }
+    .skills_cards {
+      width: 80%;
+      margin: 0 auto;
+      // max-width: 90%;
+      display: flex;
+      flex-direction: row;
+      flex-wrap: wrap;
+      gap: 52px;
+    }
+  }
+  .contact {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    .contact-text {
+      // margin: 0;
+      width: 40%;
+      // margin: 0 auto;
+      // background-color: red;
+      display: flex;
+      flex-direction: column;
+      text-align: right;
+      justify-content: flex;
+      .contact-text_container{
+        align-items: center;
+        text-align: right;
+        h3 {
+          font-family: Roboto, sans-serif;
+          font-weight: 800;
+          font-size: 100px;
+          color: $texts;
+          margin: 15px 0;
+        }
+        input {
+          display: flex;
+          width: 80%;
+          margin: 15px auto;
+          // justify-content: flex-end;
+          height: 40px;
+          background-color: #81767b;
+          border: none;
+          border-radius: 15px;
+          &::placeholder {
+            color: white;
+            text-align: center;
+          }
+        }
+        button {
+          width: 200px;
+          height: 50px;
+          margin: 15px 0;
+          border-radius: 15px;
+          background-color: $button-2;
+          border: none;
+          color: $texts;
+          font-family: Roboto, sans-serif;
+          font-size: 20px;
+          font-weight: 800;
+          cursor: pointer;
+          transition: all 250ms;
+          &:hover{
+            background-color: #46356e;
+            // color: #ffffff;
+          }
+        }
+
+      }
+
+    }
+    .contact-svg {
+      margin: 0 25px;
+      // background-color: darkred;
+    }
   }
 }
 @keyframes float {
