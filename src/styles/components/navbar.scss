@@ -1,0 +1,66 @@
+$button-1: #0496FF;
+$button-2: #6E54AC;
+$background: #282627;
+$texts: #FFE9F3;
+.nav{
+    width: 100%;
+    height: 75px;
+    background-color: $background;
+    z-index: 50;
+    .nav_ul{
+        height: 100%;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        padding: 0 25px;
+        z-index: 50;
+        // align-items: center;
+        .nav_ul-li-container{
+            display: flex;
+            flex-direction: row;
+            justify-content: space-around;
+            align-items: center;
+            .nav_ul-li{
+                margin: 0 2vw;
+                // height: 100%;
+                // align-items: center;
+                list-style-type: none;
+                a{
+                    height: 100%;
+                    font-size: 1rem;
+                    text-decoration: none;
+                    color: $texts;
+                    margin: 0;
+                    padding: 20px 0;
+                    transition: all 250ms;
+                    &:hover{
+                        color: #906de2;
+                        border-top: 3px solid $button-2;
+                        border-bottom: 3px solid $button-2;
+                    }
+                }
+            }
+        }
+        .nav_ul-li-btn{
+            display: flex;
+            justify-content: center;
+            height: 100%;
+            align-items: center;
+            button{
+                width: 140px;
+                height: 40px;
+                background-color: $button-2;
+                border: none;
+                border-radius: 25px;
+                color: white;
+                font-weight: 900;
+                cursor: pointer;
+                transition: all 250ms;
+                &:hover{
+                    background-color: #3f2f63;
+                }
+            }
+
+        }
+    }
+}
