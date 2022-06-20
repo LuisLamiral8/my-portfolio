@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React from "react";
 import Typical from "react-typical";
 import "./styles/globals.scss";
 //Components
@@ -10,14 +10,11 @@ function App() {
   // function alert(){
   //   window.alert("hola");
   // }
-  const alert = () => {
-    window.alert("I'm so sorry, the contact system is actually don't working ");
-  };
   return (
     <body className="body">
-      <Indicator />
-      <header id="header" className="header">
+      <Indicator/>
         <Navbar />
+      <header id="header" className="header">
         <div className="header-container">
           <div className="header_svg">
             <img src="/illustrations/header.svg" alt="" />
@@ -52,6 +49,7 @@ function App() {
       <section id="skills" className="skills">
         <div className="skills_title">
           <h3>SKILLS</h3>
+          <div className="skill_separation"></div>
         </div>
         <div className="skills_cards">
           <Card image="/icons/github.svg" text="Git Version Control" />
@@ -65,11 +63,12 @@ function App() {
       <section id="contact" className="contact">
         <div className="contact-text">
           <div className="contact-text_container">
-            <h3>Contact</h3>
+            <h3>CONTACT</h3>
+            <div className="contact_separation"></div>
             <input type="text" placeholder="EMAIL" />
             <input type="text" placeholder="MESSAGE" />
             {/* <input type="button" value="Send" onClick={alert()} /> */}
-            <button onClick={() => alert()}>Send</button>
+            <button onClick={() => window.alert("I'm so sorry, the contact system is actually don't working ")}>SEND</button>
           </div>
         </div>
         <div className="contact-svg">

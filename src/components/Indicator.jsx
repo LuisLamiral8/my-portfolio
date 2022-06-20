@@ -1,13 +1,13 @@
 import React from "react";
-import '../styles/components/indicator.scss'
+import styles from './Indicator.module.scss'
 const Indicator = () => {
   return (
-    <aside className="sidebar">
-      <div className="sidebar_bar">
-        <div className="sidebar_bar-item"></div>
-        <div className="sidebar_bar-item"></div>
-        <div className="sidebar_bar-item"></div>
-        <div className="sidebar_bar-item"></div>
+    <aside className={styles.container}>
+      <div className={styles.bar}>
+        <div className={styles.item}></div>
+        <div className={styles.item}></div>
+        <div className={styles.item}></div>
+        <div className={styles.item}></div>
       </div>
     </aside>
   );

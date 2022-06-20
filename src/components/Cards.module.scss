@@ -3,10 +3,10 @@ $button-2: #6e54ac;
 $background: #282627;
 $texts: #ffe9f3;
 
-.card{
+.container{
     width: 300px;
-    height: 120px;
-    border-radius: 25px;
+    height: 125px;
+    border-radius: 10px;
     background-color: #423c3f;
     display: flex;
     flex-direction: row;
@@ -19,12 +19,12 @@ $texts: #ffe9f3;
     // &:nth-child(4), &:nth-child(5), &:nth-child(6){
     //     animation: shake1 1s infinite;
     // }
-    .card-img{
+    .img{
         margin: 0 15px;
         display: flex;
         align-items: center;
     }
-    .card-text{
+    .text{
         width: 50%;
         max-width: 50%;
         p{

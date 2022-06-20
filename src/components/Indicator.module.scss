@@ -1,9 +1,9 @@
-$button-1: #0496FF;
-$button-2: #6E54AC;
+$button-1: #0496ff;
+$button-2: #6e54ac;
 $background: #282627;
-$texts: #FFE9F3;
+$texts: #ffe9f3;
 
-.sidebar {
+.container {
   position: absolute;
   top: 0;
   left: 0;
@@ -13,7 +13,7 @@ $texts: #FFE9F3;
   align-items: center;
   justify-content: center;
   z-index: -1;
-  .sidebar_bar {
+  .bar {
     width: 2px;
     height: 30vh;
     background-color: #636363;
@@ -24,27 +24,27 @@ $texts: #FFE9F3;
     justify-content: center;
     // flex-direction: column;
     // z-index: 14;
-    .sidebar_bar-item {
+    .item {
       width: 20px;
       height: 20px;
       background-color: $background;
       border: 2px solid $button-2;
       position: fixed;
       border-radius: 50px;
-        // margin: 15px 0;
+      // margin: 15px 0;
       // z-index: 15;
-      &:first-child{
-          margin-top: 10vh;
+      &:first-child {
+        margin-top: 10vh;
       }
-      &:nth-child(2){
-          margin-top: 20vh;
+      &:nth-child(2) {
+        margin-top: 20vh;
       }
-      &:nth-child(3){
-          margin-top: 30vh;
+      &:nth-child(3) {
+        margin-top: 30vh;
       }
-    //   &:last-child{
-    //       margin-top: 37.5vh;
-    //   }
+      //   &:last-child{
+      //       margin-top: 37.5vh;
+      //   }
     }
   }
 }

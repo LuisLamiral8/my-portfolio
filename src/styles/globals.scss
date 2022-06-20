@@ -14,14 +14,41 @@ html {
   // background-color: #2f2e41;
   background-color: $background;
 }
+::-webkit-scrollbar {
+  width: 10px;
+	background-color: #F5F5F5;
+}
+::-webkit-scrollbar-track {
+  box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+  background-color: $background;
+}
+::-webkit-scrollbar-thumb {
+  border-radius: 5px;
+	box-shadow: inset 0 0 6px rgba(0,0,0,.3);
+	// background-color: rgb(85, 83, 83);
+  background-color: $button-2;
+}
 .body {
+  scroll-behavior: smooth;
+  padding: 0;
+  margin: 0;
+  width: 100%;
+  height: 100vh;
+  overflow-y: scroll;
+  scroll-snap-points-y: repeat(100vh);
+  scroll-snap-type: y mandatory;
   .header {
+    scroll-snap-align: center;
+    width: 100%;
+    height: 100vh;
     .header-container {
       width: 100%;
-      height: 90vh;
+      height: 100%;
       display: flex;
       flex-direction: row;
       justify-content: center;
+      position: relative;
+      bottom: 75px;
       .header_svg {
         animation: float 10s infinite;
         justify-content: center;
@@ -55,7 +82,9 @@ html {
     }
   }
   .about-me {
-    width: 100%;
+    scroll-snap-align: center;
+    width: 90%;
+    margin: 0 auto;
     height: 100vh;
     // background-color: gray;
     display: flex;
@@ -86,9 +115,12 @@ html {
     }
   }
   .skills {
-    width: 100%;
+    scroll-snap-align: center;
+    width: 90%;
+    margin: 0 auto;
     height: 100vh;
     display: flex;
+    // background: red;
     flex-direction: column;
     justify-content: center;
     .skills_title {
@@ -98,6 +130,12 @@ html {
       color: $texts;
       font-size: 2.5em;
       margin: 15px auto;
+      .skill_separation {
+        width: 50%;
+        margin: 15px 0 25px 0;
+        height: 2px;
+        background: $texts;
+      }
     }
     .skills_cards {
       width: 80%;
@@ -110,29 +148,33 @@ html {
     }
   }
   .contact {
-    width: 100%;
+    scroll-snap-align: center;
+    width: 90%;
+    margin: 0 auto;
     height: 100vh;
     display: flex;
     flex-direction: row;
-    justify-content: center;
+    justify-content: space-around;
+    align-items: center;
     .contact-text {
-      // margin: 0;
-      width: 40%;
-      // margin: 0 auto;
-      // background-color: red;
+      width: 50%;
       display: flex;
       flex-direction: column;
-      text-align: right;
-      justify-content: flex;
-      .contact-text_container{
+      .contact-text_container {
         align-items: center;
-        text-align: right;
+        text-align: center;
         h3 {
           font-family: Roboto, sans-serif;
-          font-weight: 800;
-          font-size: 100px;
+          font-weight: 1000;
+          font-size: 50px;
           color: $texts;
           margin: 15px 0;
+        }
+        .contact_separation {
+          width: 75%;
+          margin: 15px auto 50px auto;
+          height: 2px;
+          background: $texts;
         }
         input {
           display: flex;
@@ -140,19 +182,30 @@ html {
           margin: 15px auto;
           // justify-content: flex-end;
           height: 40px;
-          background-color: #81767b;
-          border: none;
-          border-radius: 15px;
+          // background-color: #81767b;
+          background-color: transparent;
+          border: 2px solid $texts;
+          border-radius: 5px;
+          color: white;
+          text-align: center;
+          font-family: Roboto, sans-serif;
+          transition: all 250ms;
           &::placeholder {
             color: white;
             text-align: center;
+          }
+          &:active,
+          &:focus,
+          &::selection {
+            border-radius: 25px;
+            outline: none;
           }
         }
         button {
           width: 200px;
           height: 50px;
           margin: 15px 0;
-          border-radius: 15px;
+          border-radius: 10px;
           background-color: $button-2;
           border: none;
           color: $texts;
@@ -161,17 +214,19 @@ html {
           font-weight: 800;
           cursor: pointer;
           transition: all 250ms;
-          &:hover{
+          &:hover {
             background-color: #46356e;
             // color: #ffffff;
           }
         }
-
       }
-
     }
     .contact-svg {
+      width: 40%;
       margin: 0 25px;
+      img {
+        width: 80%;
+      }
       // background-color: darkred;
     }
   }
