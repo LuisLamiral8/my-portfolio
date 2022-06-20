@@ -12,7 +12,6 @@ $texts: #ffe9f3;
   display: flex;
   align-items: center;
   justify-content: center;
-  z-index: -1;
   .bar {
     width: 2px;
     height: 30vh;
@@ -28,11 +27,17 @@ $texts: #ffe9f3;
       width: 20px;
       height: 20px;
       background-color: $background;
+      // background-color: red;
       border: 2px solid $button-2;
       position: fixed;
       border-radius: 50px;
+      cursor: pointer;
       // margin: 15px 0;
       // z-index: 15;
+      transition: all 250ms;
+      &:hover {
+        background-color: #6e54ac;
+      }
       &:first-child {
         margin-top: 10vh;
       }
