@@ -41,9 +41,7 @@ const Index = () => {
             </li>
           </div>
           <div className="nav_btn">
-            <button>
               <a href="#contact"> Contactarse</a>
-            </button>
           </div>
         </ul>
       </nav>

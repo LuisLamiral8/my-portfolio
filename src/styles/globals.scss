@@ -96,22 +96,14 @@ html {
       }
       .nav_btn {
         display: flex;
-        justify-content: center;
-        height: 100%;
         align-items: center;
-        button {
-          a {
-            font-family: "Mukta", sans-serif;
-            text-decoration: none;
-            color: white;
-          }
-          width: 140px;
-          height: 40px;
+        a {
+          text-decoration: none;
+          color: white;
+          padding: 7px 50px;
           background-color: $buttonPrimary;
-          border: none;
           border-radius: 25px;
           font-weight: 900;
-          cursor: pointer;
           transition: all 250ms;
           &:hover {
             background-color: $buttonPrimaryHover;
