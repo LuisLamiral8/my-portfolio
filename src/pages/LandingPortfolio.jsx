@@ -1,10 +1,10 @@
-import React from "react";
+import React, { useEffect, useReducer, useState } from "react";
 import Typical from "react-typical";
 import Slider from "react-slick";
-//Components
-// import Navbar from "../components/Navbar";
 import Card from "../components/Card";
-
+import { useDispatch, useSelector } from "react-redux";
+import langReducer, { setLang } from "../slices/langReducer";
+import data from "../assets/texts.json";
 const Index = () => {
   var settings = {
     dots: true,
@@ -20,10 +20,42 @@ const Index = () => {
     autoplaySpeed: 3000,
     // dotsClass: "dots"
   };
+  const [langShow, setLangShow] = useState(false);
+  const dispatch = useDispatch();
+  const lang = useSelector((state) => state.lang);
+  // const [language, setLanguage] = useState(lang.ENG)
+  const [language, setLanguage] = useState(data.ENG);
 
+  useEffect(() => {
+    console.log("lang: ", lang);
+  }, [lang]);
+
+  const updateLang = (lang) => {
+    console.log("Se ejecuta updateLang");
+    switch (lang) {
+      case "ESP":
+        setLanguage(data.ESP);
+        console.log("LENGUAJE CAMBIADO: ", language);
+        break;
+      case "ENG":
+        setLanguage(data.ENG);
+        console.log("LENGUAJE CAMBIADO: ", language);
+        break;
+      case "BR":
+        setLanguage(data.BR);
+        console.log("LENGUAJE CAMBIADO: ", language);
+        break;
+    }
+  };
+  const changeLang = (param) => {
+    dispatch(setLang(param));
+    updateLang(lang);
+    // location.reload();
+    console.log(lang);
+    setLangShow(false);
+  };
   return (
     <body className="body">
-      {/* <Indicator /> */}
       <nav className="nav">
         <ul>
           <div className="nav_li-container">
@@ -41,14 +73,54 @@ const Index = () => {
             </li>
           </div>
           <div className="nav_btn">
-              <a href="#contact"> Contactarse</a>
+            <div className="lang-menu">
+              <button onClick={() => setLangShow(!langShow)}>
+                Lenguaje
+                {langShow ? (
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="24"
+                    height="24"
+                    viewBox="0 0 24 24"
+                  >
+                    <g transform="rotate(180 12 12)">
+                      <path
+                        fill="currentColor"
+                        d="m17.71 11.29l-5-5a1 1 0 0 0-.33-.21a1 1 0 0 0-.76 0a1 1 0 0 0-.33.21l-5 5a1 1 0 0 0 1.42 1.42L11 9.41V17a1 1 0 0 0 2 0V9.41l3.29 3.3a1 1 0 0 0 1.42 0a1 1 0 0 0 0-1.42Z"
+                      />
+                    </g>
+                  </svg>
+                ) : (
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="24"
+                    height="24"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      fill="currentColor"
+                      d="m17.71 11.29l-5-5a1 1 0 0 0-.33-.21a1 1 0 0 0-.76 0a1 1 0 0 0-.33.21l-5 5a1 1 0 0 0 1.42 1.42L11 9.41V17a1 1 0 0 0 2 0V9.41l3.29 3.3a1 1 0 0 0 1.42 0a1 1 0 0 0 0-1.42Z"
+                    />
+                  </svg>
+                )}
+              </button>
+              {langShow && (
+                <div className="lang-menu-show">
+                  <button onClick={() => changeLang("ESP")}>ESP</button>
+                  <button onClick={() => changeLang("ENG")}>ENG</button>
+                  <button onClick={() => changeLang("BR")}>BR</button>
+                </div>
+              )}
+            </div>
+            <a href="#contact"> Contactarse</a>
           </div>
         </ul>
       </nav>
       <header id="header" className="header">
         <div className="header-container">
           <div className="header_title">
-            <h1>¡Bienvenido a mi portafolio!</h1>
+            {/* <h1>¡Bienvenido a mi portafolio!</h1> */}
+            <h1>{language.header.title}</h1>
             <h2>Soy Luis Lamiral</h2>
             {/* <div>
               <Typical

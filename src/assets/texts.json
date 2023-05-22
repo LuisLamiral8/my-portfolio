@@ -1,0 +1,17 @@
+{
+  "ESP": {
+    "header": {
+      "title": "¡Bienvenido a mi portafolio!"
+    }
+  },
+  "ENG": {
+    "header": {
+      "title": "Welcome to my portfolio!"
+    }
+  },
+  "BR": {
+    "header":{
+      "title": "Bem-vindo ao meu portfólio!"
+    }
+  }
+}

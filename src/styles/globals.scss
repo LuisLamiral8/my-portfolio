@@ -96,7 +96,43 @@ html {
       }
       .nav_btn {
         display: flex;
+        height: 100%;
         align-items: center;
+        gap: 10px;
+        .lang-menu {
+          width: 100px;
+          color: $text;
+          button {
+            cursor: pointer;
+            display: flex;
+            color: $text;
+            background: transparent;
+            justify-content: center;
+            align-items: center;
+            height: 25px;
+            width: 100%;
+            border: none;
+            font-family: Mukta, sans-serif;
+            svg {
+              width: 20px;
+            }
+            transition: all 250ms;
+            &:hover {
+              color: $buttonPrimaryHover;
+            }
+          }
+          .lang-menu-show {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: row;
+            width: 100%;
+            gap: 3px;
+            button {
+              padding: 0 !important;
+            }
+          }
+        }
         a {
           text-decoration: none;
           color: white;
