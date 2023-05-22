@@ -1,8 +1,8 @@
 import React from "react";
-import { useRouteError } from "react-router-dom";
+import { useLocation, useRouteError } from "react-router-dom";
 
 const ErrorPage = () => {
-  const error = useRouteError();
+  const error = useLocation();
   return (
     <div>
       <h1>ERROR {error.status}</h1>
