@@ -1,16 +1,40 @@
 {
-  "ESP": {
+  "esp": {
+    "nav": {
+      "home": "Inicio",
+      "aboutme": "Sobre mí",
+      "skills": "Habilidades",
+      "projects": "Proyectos",
+      "language": "Idioma",
+      "contact": "Contactarse"
+    },
     "header": {
       "title": "¡Bienvenido a mi portafolio!"
     }
   },
-  "ENG": {
+  "eng": {
+    "nav": {
+      "home": "Home",
+      "aboutme": "About me",
+      "skills": "Skills",
+      "projects": "Proyects",
+      "language": "Language",
+      "contact": "Contact me"
+    },
     "header": {
       "title": "Welcome to my portfolio!"
     }
   },
-  "BR": {
-    "header":{
+  "br": {
+    "nav": {
+      "home": "Início",
+      "aboutme": "Sobre mim",
+      "skills": "Habilidades",
+      "projects": "Projetos",
+      "language": "Idioma",
+      "contact": "Contate-me"
+    },
+    "header": {
       "title": "Bem-vindo ao meu portfólio!"
     }
   }

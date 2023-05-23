@@ -4,8 +4,8 @@ import Slider from "react-slick";
 import Card from "../components/Card";
 import { useDispatch, useSelector } from "react-redux";
 import langReducer, { setLang } from "../slices/langReducer";
-import data from "../assets/texts.json";
-const Index = () => {
+import { useNavigate } from "react-router-dom";
+const Index = ({language}) => {
   var settings = {
     dots: true,
     className: "test",
@@ -20,62 +20,63 @@ const Index = () => {
     autoplaySpeed: 3000,
     // dotsClass: "dots"
   };
+  const navigate = useNavigate()
   const [langShow, setLangShow] = useState(false);
-  const dispatch = useDispatch();
-  const lang = useSelector((state) => state.lang);
+  // const dispatch = useDispatch();
+  // const lang = useSelector((state) => state.lang);
   // const [language, setLanguage] = useState(lang.ENG)
-  const [language, setLanguage] = useState(data.ENG);
+  // const [language, setLanguage] = useState(data.ENG);
 
-  useEffect(() => {
-    console.log("lang: ", lang);
-  }, [lang]);
+  // useEffect(() => {
+  // console.log("lang: ", lang);
+  // }, [lang]);
 
-  const updateLang = (lang) => {
-    console.log("Se ejecuta updateLang");
-    switch (lang) {
-      case "ESP":
-        setLanguage(data.ESP);
-        console.log("LENGUAJE CAMBIADO: ", language);
-        break;
-      case "ENG":
-        setLanguage(data.ENG);
-        console.log("LENGUAJE CAMBIADO: ", language);
-        break;
-      case "BR":
-        setLanguage(data.BR);
-        console.log("LENGUAJE CAMBIADO: ", language);
-        break;
-    }
-  };
+  // const updateLang = (lang) => {
+  //   console.log("Se ejecuta updateLang");
+  //   switch (lang) {
+  //     case "ESP":
+  //       setLanguage(data.ESP);
+  //       console.log("LENGUAJE CAMBIADO: ", language);
+  //       break;
+  //     case "ENG":
+  //       setLanguage(data.ENG);
+  //       console.log("LENGUAJE CAMBIADO: ", language);
+  //       break;
+  //     case "BR":
+  //       setLanguage(data.BR);
+  //       console.log("LENGUAJE CAMBIADO: ", language);
+  //       break;
+  //   }
+  // };
   const changeLang = (param) => {
-    dispatch(setLang(param));
-    updateLang(lang);
-    // location.reload();
-    console.log(lang);
+   
+    navigate(param)
     setLangShow(false);
   };
+
+  console.log(language);
   return (
     <body className="body">
       <nav className="nav">
         <ul>
           <div className="nav_li-container">
             <li>
-              <a href="#header">Inicio</a>
+              <a href="#header">{language.nav.home}</a>
             </li>
             <li>
-              <a href="#about-me">Sobre mí</a>
+              <a href="#about-me">{language.nav.aboutme}</a>
             </li>
             <li>
-              <a href="#skills">Habilidades</a>
+              <a href="#skills">{language.nav.skills}</a>
             </li>
             <li>
-              <a href="#">Proyectos</a>
+              <a href="#">{language.nav.projects}</a>
             </li>
           </div>
           <div className="nav_btn">
             <div className="lang-menu">
               <button onClick={() => setLangShow(!langShow)}>
-                Lenguaje
+                {language.nav.language}
                 {langShow ? (
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
@@ -106,13 +107,13 @@ const Index = () => {
               </button>
               {langShow && (
                 <div className="lang-menu-show">
-                  <button onClick={() => changeLang("ESP")}>ESP</button>
-                  <button onClick={() => changeLang("ENG")}>ENG</button>
-                  <button onClick={() => changeLang("BR")}>BR</button>
+                  <button onClick={() => changeLang("/es/my")}>ESP</button>
+                  <button onClick={() => changeLang("/en/my")}>ENG</button>
+                  <button onClick={() => changeLang("/br/my")}>BR</button>
                 </div>
               )}
             </div>
-            <a href="#contact"> Contactarse</a>
+            <a href="#contact"> {language.nav.contact}</a>
           </div>
         </ul>
       </nav>

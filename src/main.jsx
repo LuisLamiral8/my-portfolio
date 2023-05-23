@@ -8,6 +8,8 @@ import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import store from "./store/store.js";
 import { Provider } from "react-redux";
+import data from "./assets/texts.json";
+
 
 ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>
@@ -15,7 +17,9 @@ ReactDOM.createRoot(document.getElementById("root")).render(
       <BrowserRouter>
         <Routes>
           <Route path="/" element={<Navigate to="/myself" />} />
-          <Route path="/myself" element={<LandingPortfolio />} />
+          <Route path="/es/my" element={<LandingPortfolio language={data.esp}/>} />
+          <Route path="/en/my" element={<LandingPortfolio language={data.eng}/>} />
+          <Route path="/br/my" element={<LandingPortfolio language={data.br}/>} />
           <Route path="*" element={<ErrorPage />} />
         </Routes>
       </BrowserRouter>
