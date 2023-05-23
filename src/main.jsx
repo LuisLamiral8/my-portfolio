@@ -16,7 +16,7 @@ ReactDOM.createRoot(document.getElementById("root")).render(
     <Provider store={store}>
       <BrowserRouter>
         <Routes>
-          <Route path="/" element={<Navigate to="/myself" />} />
+          <Route path="/" element={<Navigate to="/es/my" />} />
           <Route path="/es/my" element={<LandingPortfolio language={data.esp}/>} />
           <Route path="/en/my" element={<LandingPortfolio language={data.eng}/>} />
           <Route path="/br/my" element={<LandingPortfolio language={data.br}/>} />
